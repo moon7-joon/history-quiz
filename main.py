@@ -18,7 +18,7 @@ while True:
     if choice == "1":
         game.play()
     elif choice == "2":
-        print("새로운 문제를 추가합니다.")
+        game.add_quiz()
     elif choice == "3":
         game.show_list()
     elif choice == "4":
