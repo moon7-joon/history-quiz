@@ -35,3 +35,13 @@ class QuizGame:
             print()
 
         print(f"결과: {len(self.quizzes)}문제 중 {correct_count}문제 정답!")
+
+    def show_list(self):
+        if not self.quizzes:
+            print("등록된 퀴즈가 없습니다.")
+            return
+
+        print(f"등록된 퀴즈: 총 {len(self.quizzes)}개")
+
+        for number, quiz in enumerate(self.quizzes, start=1):
+            print(f"{number}. {quiz.question}")

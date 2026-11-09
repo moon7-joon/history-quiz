@@ -20,7 +20,7 @@ while True:
     elif choice == "2":
         print("새로운 문제를 추가합니다.")
     elif choice == "3":
-        print("문제 목록을 보여줍니다.")
+        game.show_list()
     elif choice == "4":
         print("최고 점수를 보여줍니다.")
     elif choice == "5":
