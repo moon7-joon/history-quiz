@@ -1,3 +1,8 @@
+from quiz_data import create_default_quizzes
+from quiz_game import QuizGame
+
+game = QuizGame(create_default_quizzes())
+
 print("역사 탐험 퀴즈에 오신 것을 환영합니다!")
 
 while True:
@@ -11,7 +16,7 @@ while True:
     choice = input("번호를 선택하세요: ").strip()
 
     if choice == "1":
-        print("역사 퀴즈를 시작합니다!")
+        game.play()
     elif choice == "2":
         print("새로운 문제를 추가합니다.")
     elif choice == "3":
