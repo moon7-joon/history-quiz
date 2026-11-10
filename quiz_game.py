@@ -4,6 +4,7 @@ from quiz import Quiz
 class QuizGame:
     def __init__(self, quizzes):
         self.quizzes = quizzes
+        self.best_score = None
 
     def play(self):
         if not self.quizzes:
@@ -24,7 +25,21 @@ class QuizGame:
 
             print()
 
+        score = round(correct_count / len(self.quizzes) * 100)
+
         print(f"결과: {len(self.quizzes)}문제 중 {correct_count}문제 정답!")
+        print(f"이번 점수: {score}점")
+
+        if self.best_score is None or score > self.best_score:
+            self.best_score = score
+            print("새로운 최고 점수입니다!")
+
+    def show_score(self):
+        if self.best_score is None:
+            print("아직 퀴즈를 풀지 않았습니다.")
+            return
+
+        print(f"최고 점수: {self.best_score}점")
 
     def show_list(self):
         if not self.quizzes:

@@ -22,7 +22,7 @@ while True:
     elif choice == "3":
         game.show_list()
     elif choice == "4":
-        print("최고 점수를 보여줍니다.")
+        game.show_score()
     elif choice == "5":
         print("게임을 끝냅니다.")
         break
