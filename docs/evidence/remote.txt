@@ -1,0 +1,2 @@
+origin	https://github.com/moon7-joon/history-quiz.git (fetch)
+origin	https://github.com/moon7-joon/history-quiz.git (push)

@@ -1,0 +1,21 @@
+* b734113 Docs: 개발 환경과 퀴즈 실행 증빙 화면 추가
+* 52b56cc Add README for screenshots directory
+* fc2c5da Data: 조선 건국 퀴즈 추가 데이터 저장
+* 3a091ee Docs: 복제 저장소에서 실습 기록 추가
+* e359aef Docs: 실행 방법과 기능 및 데이터 구조 설명 완성
+* 1a88ed6 Test: 저장 파일 누락과 손상 시 기본 데이터 복구 검증
+* be765e8 Refactor: 메뉴와 게임 운영을 QuizGame 클래스로 통합
+* cd1e5ee Feat: JSON 파일 저장과 불러오기 및 안전한 종료 처리 구현
+* 82d0653 Feat: 최고 점수 계산과 갱신 및 조회 구현
+* 5b969ea Feat: 퀴즈 추가와 공통 입력 검증 기능 구현
+* ed00940 Feat: 등록된 퀴즈 목록 보기 기능 구현
+*   947fd50 Merge: 퀴즈 풀기 기능을 main에 병합
+|\  
+| * 6458799 Feat: 퀴즈 풀이와 입력 검증 및 메뉴 연결 구현
+|/  
+* 8e16fc2 Feat: 기본 역사 퀴즈 5개 추가
+* 6704fac Feat: 퀴즈 문제와 선택지 번호 출력 기능 추가
+* 536887a Feat: Quiz 클래스와 정답 확인 메서드 구현
+* af06717 Feat: 메뉴 반복과 종료 및 입력 공백 처리 추가
+* 227a9bc Feat: 게임 메뉴와 번호 선택 안내 구현
+* 42213ce Chore: 프로젝트 설명서와 Git 제외 설정 추가
