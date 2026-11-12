@@ -127,3 +127,5 @@ main 브랜치에 병합했습니다.
 ```bash
 git log --oneline --graph --all
 ```
+## 복제 실습
+별도 폴더에 clone한 뒤 설명서를 수정했습니다.
