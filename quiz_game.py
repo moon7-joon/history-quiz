@@ -1,10 +1,53 @@
 from quiz import Quiz
+from storage import load_state, save_state
 
 
 class QuizGame:
-    def __init__(self, quizzes):
-        self.quizzes = quizzes
-        self.best_score = None
+    def __init__(self, quizzes=None):
+        if quizzes is None:
+            self.quizzes, self.best_score = load_state()
+        else:
+            self.quizzes = quizzes
+            self.best_score = None
+
+    def save(self):
+        return save_state(self.quizzes, self.best_score)
+
+    def show_menu(self):
+        print()
+        print("1. 역사 퀴즈 풀기")
+        print("2. 새로운 문제 추가하기")
+        print("3. 문제 목록 보기")
+        print("4. 최고 점수 보기")
+        print("5. 게임 끝내기")
+
+    def run(self):
+        print("역사 탐험 퀴즈에 오신 것을 환영합니다!")
+        print(f"불러온 퀴즈: {len(self.quizzes)}개")
+
+        try:
+            while True:
+                self.show_menu()
+                choice = self.read_number("번호를 선택하세요: ", 1, 5)
+
+                if choice == 1:
+                    self.play()
+                elif choice == 2:
+                    self.add_quiz()
+                elif choice == 3:
+                    self.show_list()
+                elif choice == 4:
+                    self.show_score()
+                elif choice == 5:
+                    print("게임을 끝냅니다.")
+                    break
+
+        except (KeyboardInterrupt, EOFError):
+            print("\n입력이 중단되어 게임을 종료합니다.")
+
+        finally:
+            if self.save():
+                print("게임 데이터를 저장했습니다.")
 
     def play(self):
         if not self.quizzes:
@@ -33,6 +76,8 @@ class QuizGame:
         if self.best_score is None or score > self.best_score:
             self.best_score = score
             print("새로운 최고 점수입니다!")
+
+        self.save()
 
     def show_score(self):
         if self.best_score is None:
@@ -90,4 +135,7 @@ class QuizGame:
         new_quiz = Quiz(question, choices, answer)
         self.quizzes.append(new_quiz)
 
-        print("퀴즈가 추가되었습니다!")
+        if self.save():
+            print("퀴즈가 추가되었습니다!")
+        else:
+            print("퀴즈는 추가됐지만 파일 저장에 실패했습니다.")
